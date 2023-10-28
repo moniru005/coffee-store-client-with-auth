@@ -19,7 +19,7 @@ const CoffeeCard = ({ coffee, coffees, setCoffees }) => {
     }).then((result) => {
       if (result.isConfirmed) {
 
-        fetch(`https://coffee-store-server-8t2rtsu7r-md-monir-uddins-projects.vercel.app/coffee/${_id}`, {
+        fetch(`https://coffee-store-server-9witg7lfw-md-monir-uddins-projects.vercel.app/coffee/${_id}`, {
           method: "DELETE",
         })
           .then((res) => res.json())
@@ -27,7 +27,7 @@ const CoffeeCard = ({ coffee, coffees, setCoffees }) => {
             console.log(data);
             if (data.deletedCount > 0) {
               Swal.fire("Deleted!", "Your Coffee has been deleted.", "success");
-              const remaining = coffees.filter(cof => cof._id !== _id);
+              const remaining = coffees?.filter(cof => cof._id !== _id);
               setCoffees(remaining);
             }
           });

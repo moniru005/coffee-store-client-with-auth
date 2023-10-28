@@ -7,7 +7,7 @@ const Users = () => {
 
   const handleUserDelete = id =>{
     //make sure user is confirm to delete
-    fetch(`https://coffee-store-server-8t2rtsu7r-md-monir-uddins-projects.vercel.app/users/${id}`, {
+    fetch(`https://coffee-store-server-9witg7lfw-md-monir-uddins-projects.vercel.app/users/${id}`, {
         method: 'DELETE'
     })
     .then(res => res.json())
@@ -41,7 +41,7 @@ const Users = () => {
           <tbody>
             
            {
-            users.map(user =>  <tr key={user._id} 
+            users?.map(user =>  <tr key={user._id} 
             className="bg-base-200">
             <th></th>
             <td>{user.email}</td>
